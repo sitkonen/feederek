@@ -25,12 +25,13 @@ def feederek():
                 print("Nothing new - " + fee_title)
             else:
                 sleep(5) # for server flood detection
-                entry_title = fee['entries'][x]['title']
+                entry_title = fee['entries'][x]['title'
+                entry_desc = fee['entries'][x]['description']
                 entry_id = fee['entries'][x]['id']
                 print("Updated - " + fee_title)
 
 
-                message = str(fee_title +"\n" + entry_title +"\n" + entry_id)
+                message = str(fee_title +"\n" + entry_title +"\n" + entry_desc +"\n" + entry_id)
                 bot.sendMessage(chat_id="@CHANNEL_NAME", text=message)
 
     pickle.dump(fee_links, open("db.p", 'wb'))
